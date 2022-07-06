@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Sender</title>
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+		}
+		#header
+		{
+			padding-top: 30px; 
+			height: 70px;
+			background-color: #440A67;
+			color: white;
+			font-size: 20px;
+		}
+		#content
+		{
+			height: 320px;
+			padding-top: 50px; 
+		}
+		label
+		{
+			height: 25px;
+			width: 50px;
+			font-size: 18px;
+			font-weight: bold;
+			color: #440A67;
+		}
+		input[type=text],[type=email]
+		{
+			width: 300px;
+			height: 25px;
+			border-radius: 10px;
+			font-family: Arial;
+			font-size: 15px;
+			color: #440A67;
+			padding-left: 10px;
+		}
+		textarea
+		{
+			border-radius: 10px;
+			font-family: Arial;
+			font-size: 15px;
+			padding-top: 5px;
+			padding-left: 10px;
+		}
+		input[type=submit]
+		{
+			width: 100px;
+			height: 40px;
+			border-radius: 50px;
+			background-color: #B4AEE8;
+			font-size: 16px;
+		}
+		#footer
+		{
+			padding-top: 30px; 
+			height: 50px;
+			background-color: #440A67;
+			color: white;
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<div id="header">
+		<h2>Email Sender Application</h2>
+	</div>
+
+	<div id="content">
+		{% if messages %}
+		
+		    {% for message in messages %}
+		    <script type="text/javascript">
+		    	{% if message.tags %}
+		    		alert('{{ message }}');
+		    	{% endif %}
+		    </script>
+		    {% endfor %}
+		
+		{% endif %}
+		<form method="POST" action="/Client/mail_info/">
+			{% csrf_token %}
+			<table cellpadding="7" cellspacing="10">
+				<tr>
+					<td><label>To:</label></td>
+					<td><input type="email" name="to" required></td>
+				</tr>
+				<tr>
+					<td><label>Subject:</label></td>
+					<td><input type="text" name="subject"></td>
+				</tr>
+				<tr>
+					<td><label>Message:</label></td>
+					<td><textarea name="msg" rows="5" cols="40" required></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" name="submit" value="Send"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div id="footer">
+		Copyright &copy; 2022. All Rights Reserved. Design by: Tripti Sharma
+	</div>
+	</center>
+</body>
+</html>
