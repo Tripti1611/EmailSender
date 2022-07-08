@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['email-portal.herokuapp.com',]
 
+CSRF_TRUSTED_ORIGINS = ['https://email-portal.herokuapp.com', 'https://email-portal.herokuapp.com/Client/email/', 'https://email-portal.herokuapp.com/Client/mail-info/',]
 
 # Application definition
 
