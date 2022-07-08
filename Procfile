@@ -1,1 +1,1 @@
-web: py manage.py runserver 0.0.0.0:\$PORT\Client\email\
+web: python manage.py runserver 0.0.0.0:\$PORT\Client\email\
