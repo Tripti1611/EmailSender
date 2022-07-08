@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_protect
 
 # Create your views here.
+@csrf_protect
 def email(request):
 	return render(request,"Client/email.html")
 
