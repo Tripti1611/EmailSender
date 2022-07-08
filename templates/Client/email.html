@@ -84,7 +84,7 @@
 		
 		{% endif %}
 		<form method="POST" action="/Client/mail_info/">
-			<!--{% csrf_token %}-->
+			{% csrf_token %}
 			<table cellpadding="7" cellspacing="10">
 				<tr>
 					<td><label>To:</label></td>
