@@ -1,1 +1,1 @@
-web: gunicorn apps:Client
+web: gunicorn apps:Client/email/
